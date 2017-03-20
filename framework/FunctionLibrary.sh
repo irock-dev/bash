@@ -21,7 +21,7 @@
 		if [ `whoami` != root ]; then
 			if [ $debug != 0 ]; then echo "Elevating privileges to root "; echo; fi
 			if [ -t 1 ]; then																	# If run from terminal
-				sudo sh "$0" "$@"																	# Elevating to root in terminal
+				sudo sh "$0" "$@"																# Elevating to root in terminal
 				exit 0
 			elif [ `gnome-shell --version | cut -d " " -f3 | cut -d "." -f1` -le 2 ]; then		# If run from Gnome 1 or 2
 				gksudo "$0" "$@"																	# Elevating to root in Gnome 1 or 2
